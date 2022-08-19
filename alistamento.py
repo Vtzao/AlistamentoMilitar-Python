@@ -1,21 +1,26 @@
 #########################
 #  ALISTAMENTO MILITAR  #
 #########################
-from re import M
+from datetime import date
 
-##Identificação se o usuário é Homem ou Mulher#
-sex = input('Qual é o seu gênero? (H/M) ')
-while True:
-    if sex == M:
-    print('O alimento militar é somente para Homens, não será possível continuar.')
-    break
-    
-    else sex == H:
-    continue
-### Se o usuário for homem, o programa continua...
+print('ALISTAMENTO MILITAR')
+sexo = str(input('Qual é o seu gênero? '))
+if sexo in 'Feminino feminino Mulher mulher':
+    print('Você não é obrigada a se alistar no exécito.')
+    deseja = str(input('Mesmo assim você deseja se alistar? '))
+    if deseja in 'Sim sim':
+        print('Ok, então continue preenchendo o formuláriio')
+    if deseja in 'Não não':
+        print('Mesmo assim continue preenchendo o formulário para caso mude de ideia')
+
+if sexo in 'Masculino masculino Homem homem':
+    print('O seu alistamento é obrigatório\nContinue preenchendo o formulário')
+
+else:
+    print('Gênero inválido. Tente novamente')
+    exit()
 
 #Infos YD
-from datetime import date
 atual = date.today().year
 nasc = int(input('Qual é o seu ano de nascimento? '))
 idade = atual - nasc
@@ -35,4 +40,5 @@ elif idade > 18:
     print('Você já deveria ter se alistado a {} anos'.format(saldo))
     ano = atual - saldo
     print('Seu alistamento foi em {}.'.format(ano))
-else
+else:
+  print('Operação Inválida.')
